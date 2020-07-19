@@ -1,0 +1,38 @@
+#container{
+    background: url("/assets/img/a5.jpg") center;
+    position: relative;
+    height: 100%;
+    width: 100%;
+    
+
+}
+
+.done{
+     text-decoration: line-through;
+        color: black;
+        background-color: rgba(151,175,175,0.4);
+
+}
+
+.wrapper{
+    display: flex;
+
+    &__input{
+        border: 1px solid blue;
+        padding: 5px;
+        margin: 5px;
+        border-radius: 5px;
+    }
+}
+
+.list{
+    display: flex;
+    flex-direction: column;
+
+    &__item{
+        padding: 10px;
+        margin: 4px;
+        display: flex;
+        justify-content: space-between;
+    }
+}
