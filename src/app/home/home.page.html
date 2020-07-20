@@ -1,42 +1,31 @@
-
-
 <ion-content [fullscreen]="true">
-  <!-- <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Blank</ion-title>
-    </ion-toolbar>
-  </ion-header>  -->
 
   <div id="container">
- 
-    <h1>  <b>Todo List </b> </h1>
-   <div class="form">
+   <h1>  <b>Todo List </b> </h1>
+     <div class="form">
      <form [formGroup] ="loginForm">
-      <ion-item>
-          <ion-label position="stacked">User Name <ion-text color="danger">*</ion-text></ion-label>
-          <ion-input required type="text" formControlName="username"></ion-input>
-        </ion-item>
-       
-<br>
-        <ion-item>
-          <ion-label position="stacked">Password <ion-text color="danger">*</ion-text></ion-label>
-          <ion-input required type="password" formControlName="password"></ion-input>
-        </ion-item>
-
-        <div class="error-messages">
-          
-  <div class="error-messages">
-     {{successMessage}}
-  </div>
-        
-          </div>
-         
+      
+      <ion-item transparent>
+        <img icon-small src="assets/img/user.png" style="width: 40px; height: 30px;">
+        <ion-input required type="text" formControlName="username" placeholder=" Username"></ion-input>
+      </ion-item>
           <br>
 
-        <div class="ion-padding">
+      <ion-item>
+        <img icon-small src="assets/img/password.jpg" style="width: 40px; height: 30px;">
+        <ion-input required type="password" formControlName="password" placeholder=" Password"></ion-input>
+        </ion-item>
+          <br>
+         
+         <div class="error-messages">
+         {{successMessage}}
+         </div>
+          <br>
+
+            <div class="ion-padding">
             <ion-button (click)="login()" [disabled]="!loginForm.valid" expand="block" type="submit" class="ion-no-margin">LOG IN  </ion-button>
-          </div>
+            </div>
      </form>
-</div>
+    </div>
   </div>
 </ion-content>

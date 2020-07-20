@@ -1,41 +1,27 @@
-<div class="header" style="background-color: aqua; height:55px" >
-  
-    <ion-title style="text-align: center; margin-top: 15px; font-size: 30px">Your list</ion-title>
-    <!-- <ion-button style="margin-top: -55px"><ion-icon name="chevron-back-outline"></ion-icon></ion-button> -->
-    <!-- <p style="margin-top: -25px; font-size: 12px; float: right;" (click)="logout()">Log Out</p> -->
-    <ion-button  color="dark" (click)="logout()"  style="margin-top: -20px; float: right; width: 45px;
+<ion-header>
+<div class="header" style="background-color: aqua; height:70px" >
+    <ion-title style="text-align: center; margin-top: 10px; font-size: 30px">Your list</ion-title>
+    <ion-button  color="dark" (click)="logout()"  style="margin-top: 40px; float: right; width: 45px;
     height: 20px; font-size: 8px;">Log Out</ion-button>
 </div>
-
-
-
+</ion-header>
 <ion-content>
-  
     <div id="container">
       <br>
-<div class="wrapper">
-  <ion-input class="wrapper__input" [(ngModel)]="value" placeholder="Add New"> </ion-input>
-  <ion-button class="wrapper__button" (click)="additem()" [disabled]='value.length<2'>  <ion-icon name="add"></ion-icon></ion-button>
- 
-</div>
-<br>
-
+       <div class="wrapper">
+          <ion-input class="wrapper__input" [(ngModel)]="value" placeholder="Add New"> </ion-input>
+          <ion-button class="wrapper__button" (click)="additem()" [disabled]='value.length<2'>  <ion-icon name="add"></ion-icon></ion-button>
+        </div>
+      <br>
 <div class="list">
   <div class="list__item" [class.done]="item.isDone" *ngFor="let item of items; let ind = index;" style="font-size: 18px">
-    <ion-checkbox color="secondary"  (ionChange)="setDone(ind)"  ([ngModel])="checkBoolean" slot="end"></ion-checkbox> 
-    {{item.value}}
-  <div>
-<!-- 
-  <ion-button class="done" (click)="setDone(ind)">done</ion-button> -->
-   <!-- <ion-checkbox color="secondary" (ionChange)="setDone(ind)"  ([ngModel])="checkBoolean" slot="end"></ion-checkbox>  -->
-  <ion-button class="delete" style="margin-top: -5px;" color="danger" (click)="presentAlertConfirm(ind)">del</ion-button>
-  
+      <ion-checkbox color="secondary"  (ionChange)="setDone(ind)"  ([ngModel])="checkBoolean" slot="end"></ion-checkbox> 
+      {{item.value}}
+    <div>
+      <ion-button class="delete" style="margin-top: -5px;" color="danger" (click)="presentAlertConfirm(ind)">Del</ion-button>
+    </div>
+  </div>
 </div>
-
-</div></div>
-
-
 </div>
-
 </ion-content>
 
